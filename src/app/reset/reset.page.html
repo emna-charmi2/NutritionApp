@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  <div class="header ion-padding">
+    <ion-title class="title">
+      Entrez votre email
+      <p class="subTitle">
+        Vous recevrez un lien pour réinitialiser votre mot de passe
+      </p>
+    </ion-title>
+  </div>
+
+  <div class="ion-padding">
+    <ion-item>
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input
+        [(ngModel)]="email"
+        placeholder="Adresse email"
+        type="email"
+        autocomplete="email"
+      ></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px">
+    <ion-fab-button (click)="resetPassword()">
+      <ion-icon name="chevron-forward"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

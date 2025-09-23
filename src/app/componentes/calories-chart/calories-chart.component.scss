@@ -1,0 +1,74 @@
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 1rem 0;
+  }
+  
+  .chart-wrapper {
+    width: 220px;
+    height: 220px;
+    position: relative;
+  }
+  
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .chart-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .percentage {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .objective-label {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .calories-text {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .legend-grid {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .legend-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .legend-value {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0.2rem;
+  }
+  
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+  
+  .dot-green {
+    background-color: #10b981;
+  }
+  
+  .dot-gray {
+    background-color: #e5e7eb;
+  }
+  

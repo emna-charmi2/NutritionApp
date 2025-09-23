@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-button expand="block" color="secondary" routerLink="/tabs/tab1">
+    <i class="fa-solid fa-backward-step"></i>
+  </ion-button>
+</ion-header>
+<ion-content class="ion-padding">
+  <!-- Header with profile picture -->
+  <div class="header ion-text-center ion-padding">
+    <div class="profile-pic ion-margin">
+      <ion-icon name="person-circle-outline" size="large" color="light"></ion-icon>
+    </div>
+    <h1 class="ion-no-margin">{{ userProfile.name }}</h1>
+    <p class="ion-text-color-light">Membre depuis {{ userProfile.joinDate }}</p>
+  </div>
+
+  <div class="content ion-margin">
+    <!-- Personal Information -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-flex">
+          Informations personnelles
+          <ion-button fill="clear" size="small" (click)="editPersonalInfo()">
+            <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <div class="label">Âge</div>
+              <div class="value">{{ userProfile.age }} ans</div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="label">Sexe</div>
+              <div class="value">{{ userProfile.gender }}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <div class="label">Taille</div>
+              <div class="value">{{ userProfile.height }} cm</div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="label">Poids actuel</div>
+              <div class="value">{{ userProfile.weight }} kg</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Goals -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-flex">
+          <ion-icon name="target-outline" class="icon-primary ion-margin-end"></ion-icon>
+          Mes objectifs
+          <ion-button fill="clear" size="small" (click)="editGoals()">
+            <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="ion-margin-bottom">
+          <div class="label">Objectif principal</div>
+          <ion-badge color="medium">{{ userProfile.goal }}</ion-badge>
+        </div>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <div class="label">Poids cible</div>
+              <div class="value">{{ userProfile.targetWeight }} kg</div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="label">Calories/jour</div>
+              <div class="value">{{ userProfile.dailyCalories }} kcal</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div>
+          <div class="label">Niveau d'activité</div>
+          <div class="value">{{ userProfile.activityLevel }}</div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Achievements -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Réussites</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="achievements">
+          <ion-badge *ngFor="let achievement of achievements" [ngClass]="achievement.color">
+            {{ achievement.emoji }} {{ achievement.name }}
+          </ion-badge>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Progress -->
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Progrès total</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row class="ion-text-center">
+            <ion-col>
+              <div class="stat-value text-primary">-4.5</div>
+              <div class="stat-label">kg perdus</div>
+            </ion-col>
+            <ion-col>
+              <div class="stat-value text-success">28</div>
+              <div class="stat-label">jours actifs</div>
+            </ion-col>
+            <ion-col>
+              <div class="stat-value text-info">1,240</div>
+              <div class="stat-label">kcal brûlées</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Actions -->
+    <div class="actions ion-margin">
+      <ion-button expand="block" fill="outline" (click)="navigateToSettings()">
+        <ion-icon name="settings-outline" slot="start"></ion-icon>
+        Paramètres
+      </ion-button>
+      <ion-button expand="block" fill="outline" (click)="editGoals()">
+        <ion-icon name="target-outline" slot="start"></ion-icon>
+        Modifier mes objectifs
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

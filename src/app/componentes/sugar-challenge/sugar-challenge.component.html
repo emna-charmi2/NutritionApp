@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Challenge Sans Sucre</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/challenges"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="loading-spinner" *ngIf="loading">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <ion-card class="challenge-card" *ngIf="!loading">
+    <ion-card-header>
+      <ion-card-title>15 jours sans sucre ajouté</ion-card-title>
+      <ion-card-subtitle>Progression: {{sugarFreeDays}}/15 jours</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-progress-bar 
+        [value]="sugarFreeDays / 15" 
+        color="warning" 
+        class="main-progress">
+      </ion-progress-bar>
+      <span class="progress-text">{{ (sugarFreeDays / 15 * 100).toFixed(0) }}%</span>
+
+      <ion-chip color="primary" *ngIf="currentStreak > 0" class="ion-margin-vertical">
+        <ion-icon name="flame" color="light"></ion-icon>
+        <ion-label>Série actuelle: {{currentStreak}} jours</ion-label>
+      </ion-chip>
+
+      <ion-item color="light" lines="none" *ngIf="currentMessage">
+        <ion-icon slot="start" name="leaf" color="success"></ion-icon>
+        <ion-text color="dark">
+          <h3>{{currentMessage}}</h3>
+          <p *ngIf="sugarFreeDays > 0">Jours sans sucre : {{sugarFreeDays}}</p>
+        </ion-text>
+      </ion-item>
+
+      <ion-button 
+        expand="block" 
+        color="warning" 
+        (click)="markAsDone()"
+        [disabled]="isTodayMarked() || loading">
+        <ion-icon slot="start" name="checkmark-done"></ion-icon>
+        J’ai évité le sucre aujourd’hui
+      </ion-button>
+
+      <ion-note *ngIf="isTodayMarked()" class="already-walked">
+        Déjà marqué pour aujourd’hui. Continue demain !
+      </ion-note>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-toast
+    [isOpen]="showNotification"
+    [message]="notificationMessage"
+    [duration]="3000"
+    (didDismiss)="showNotification = false">
+  </ion-toast>
+</ion-content>

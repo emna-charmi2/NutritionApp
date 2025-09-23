@@ -1,0 +1,169 @@
+/* Ajoutez ceci à votre fichier SCSS */
+.ioncard {
+    ion-card-content {
+      flex: 1;
+      padding: 0;
+      display: flex;
+    }
+  
+    .chart-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .activities-list {
+      flex: 1;
+      width: 100%;
+      padding: 10px;
+      
+      ion-grid {
+        padding: 0;
+        
+        ion-row {
+          height: 50%;
+          margin: 0;
+          padding: 5px;
+          
+          ion-col {
+            height: 100%;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  
+    .progress-card {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      
+      &:active {
+        transform: scale(0.98);
+      }
+  
+      ion-card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        
+        i {
+          font-size: 2.5rem;
+          margin-bottom: 10px;
+        }
+  
+        h3 {
+          margin: 8px 0;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: var(--ion-color-dark);
+        }
+  
+        p {
+          margin: 0;
+          font-size: 1rem;
+          color: var(--ion-color-medium);
+        }
+      }
+  
+      /* Couleurs thématiques pour chaque carte */
+      &.walk {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        
+        h3, p, i {
+          color: white;
+        }
+      }
+      
+      &.workouts {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        
+        h3, p, i {
+          color: white;
+        }
+      }
+      
+      &.sleep {
+        background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+        color: white;
+        
+        h3, p, i {
+          color: white;
+        }
+      }
+      
+      &.meditation {
+        background: linear-gradient(135deg, #c3ec52 0%, #0ba29d 100%);
+        color: white;
+        
+        h3, p, i {
+          color: white;
+        }
+      }
+    }
+  }
+  
+  /* Adaptations pour tablette et desktop */
+  @media (min-width: 768px) {
+    .nutrition-card {
+      .activities-list {
+        padding: 20px;
+        
+        ion-grid {
+          display: flex;
+          flex-wrap: wrap;
+          
+          ion-row {
+            flex: 1;
+            height: 100%;
+            
+            ion-col {
+              height: 50%;
+            }
+          }
+        }
+      }
+      
+      .progress-card {
+        ion-card-content {
+          i {
+            font-size: 3rem;
+          }
+          
+          h3 {
+            font-size: 1.5rem;
+          }
+          
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  
+  /* Mode paysage sur mobile */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .nutrition-card {
+      .activities-list {
+        ion-grid {
+          display: flex;
+          
+          ion-row {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }

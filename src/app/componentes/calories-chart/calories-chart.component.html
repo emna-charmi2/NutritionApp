@@ -1,0 +1,42 @@
+<ion-card class="ioncard">
+  <ion-card-header>
+    <ion-card-title>Calories du jour</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="chart-container" style="position: relative; height: 250px; width: 100%;">
+      <canvas baseChart
+        [data]="doughnutChartData"
+        [type]="'doughnut'"
+        [options]="doughnutChartOptions">
+      </canvas>
+      <div class="chart-center"
+           style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+           ">
+        <div class="percentage" style="font-size: 1.8rem; font-weight: bold;">{{ percentage }}%</div>
+        <div class="objective-label" style="font-size: 0.9rem; color: gray;">Objectif</div>
+        <div class="calories-text" style="font-size: 1rem; margin-top: 0.25rem;">{{ caloriesLabel }}</div>
+      </div>
+    </div>
+
+    <ion-grid class="legend-grid" style="margin-top: 1rem;">
+      <ion-row>
+        <ion-col class="legend-item" size="6" style="display: flex; align-items: center; gap: 0.5rem;">
+          <div class="dot dot-green" style="width: 14px; height: 14px; background-color: #FFC107; border-radius: 50%;"></div>
+          <div>Consommées</div>
+          <div class="legend-value">{{ consumed }} kcal</div>
+        </ion-col>
+        <ion-col class="legend-item" size="6" style="display: flex; align-items: center; gap: 0.5rem;">
+          <div class="dot dot-gray" style="width: 14px; height: 14px; background-color: #e5e7eb; border-radius: 50%;"></div>
+          <div>Restantes</div>
+          <div class="legend-value">{{ remaining }} kcal</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

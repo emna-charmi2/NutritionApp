@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-card class="meal-card">
+    <ion-card-header>
+      <ion-card-title>Repas récents</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngIf="isLoading" class="loading-spinner">
+        <ion-spinner name="crescent"></ion-spinner>
+      </div>
+
+      <ion-list *ngIf="!isLoading">
+        <ion-item *ngFor="let meal of meals" class="meal-item">
+          <ion-button slot="start" fill="clear" color="danger" (click)="confirmDelete(meal.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+
+          <ion-label>
+            <h2>{{ meal.name }}</h2>
+            <div class="meal-macros">
+              <span class="calories">{{ meal.calories }} kcal</span>
+              <span class="separator">|</span>
+              <span class="protein">{{ meal.protein }}g protéines</span>
+              <span class="separator">|</span>
+              <span class="glucide">{{ meal.glucide }}g glucides</span>
+              <span class="separator">|</span>
+              <span class="lipide">{{ meal.lipide }}g lipides</span>
+            </div>
+            <div class="meal-meta">
+              <ion-icon name="calendar-outline"></ion-icon>
+              <span>{{ meal.date | date:'dd/MM/yyyy' }}</span>
+            </div>
+          </ion-label>
+        </ion-item>
+
+        <ion-item *ngIf="meals.length === 0" class="empty-state">
+          <ion-label class="ion-text-center">
+            <ion-icon name="fast-food-outline" size="large"></ion-icon>
+            <p>Aucun repas enregistré</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

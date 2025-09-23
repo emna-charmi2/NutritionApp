@@ -1,0 +1,50 @@
+<p>
+  daily-progression works!
+</p>
+<ion-card class="ioncard">
+  <div class="chart-container">
+    <!-- Partie Gauche - Graphique + Légende -->
+    <div class="chart-part">
+      <div class="chart-wrapper">
+        <canvas baseChart 
+          [data]="pieChartData" 
+          [type]="pieChartType" 
+          [options]="pieChartOptions">
+        </canvas>
+        <div class="chart-center-text">
+          <div class="calories">{{ totalCalories }}</div>
+          <div class="of-total">of 2,000</div>
+          <div class="consumed">CONSUMED</div>
+        </div>
+      </div>
+
+      <div class="chart-legend">
+        <div class="legend-item" *ngFor="let label of pieChartData.labels; let i = index">
+          <span class="legend-color" [style.background]="pieChartData.datasets[0].backgroundColor[i]"></span>
+          <span class="legend-label">{{ label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partie Droite - Macronutriments -->
+    <div class="macros-info">
+      <div class="macro-item">
+        <div class="macro-label">Protein</div>
+        <div class="macro-value">{{ protein.consumed.toFixed(1) }}/{{ protein.target }}g</div>
+        <div class="macro-percentage">{{ getProteinPercentage() | number:'1.0-0' }}%</div>
+      </div>
+      
+      <div class="macro-item">
+        <div class="macro-label">Carbs</div>
+        <div class="macro-value">{{ carbs.consumed.toFixed(1) }}/{{ carbs.target }}g</div>
+        <div class="macro-percentage">{{ getCarbsPercentage() | number:'1.0-0' }}%</div>
+      </div>
+      
+      <div class="macro-item">
+        <div class="macro-label">Fat</div>
+        <div class="macro-value">{{ fat.consumed.toFixed(1) }}/{{ fat.target }}g</div>
+        <div class="macro-percentage">{{ getFatPercentage() | number:'1.0-0' }}%</div>
+      </div>
+    </div>
+  </div>
+</ion-card>

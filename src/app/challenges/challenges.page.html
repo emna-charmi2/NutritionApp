@@ -1,0 +1,52 @@
+<ion-content color="light">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title text-center>
+        <div class="points-display ion-activatable ripple-parent" (click)="showPointsMessage()">
+          Points collectés : {{ totalPoints }}
+          <ion-ripple-effect></ion-ripple-effect>
+        </div>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button expand="block" color="secondary" routerLink="/tabs">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+  </ion-button>
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label>15 Days without sugar</ion-label>
+      <div class="enroll-button ion-activatable ripple-parent" (click)="enrollSugarChallenge()">
+        enroll
+        <ion-ripple-effect></ion-ripple-effect>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Walk 30 min during a month</ion-label>
+      <div class="enroll-button ion-activatable ripple-parent" (click)="enrollWalkChallenge()">
+        enroll
+        <ion-ripple-effect></ion-ripple-effect>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>15 days without cigarettes/alcohol</ion-label>
+      <div class="enroll-button ion-activatable ripple-parent" (click)="enrollNoCigarettesAlcoholChallenge()">
+        enroll
+        <ion-ripple-effect></ion-ripple-effect>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>15 days without coffee/vitamin C</ion-label>
+      <div class="enroll-button ion-activatable ripple-parent" (click)="enrollNoCoffeeVitaminCChallenge()">
+        enroll
+        <ion-ripple-effect></ion-ripple-effect>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label>Wake up at 5</ion-label>
+      <div class="enroll-button ion-activatable ripple-parent" (click)="enrollWakeUpChallenge()">
+        enroll
+        <ion-ripple-effect></ion-ripple-effect>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

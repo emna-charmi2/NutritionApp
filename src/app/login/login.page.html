@@ -1,0 +1,75 @@
+<ion-content class="ioncard">
+  <div class="login-container">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="title">Ravi de vous revoir</h1>
+      <p class="subTitle">Connectez-vous pour accéder</p>
+    </div>
+
+    <!-- Formulaire dans une carte -->
+    <div class="form-card">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+        <!-- Email -->
+        <ion-item>
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-input
+            formControlName="email"
+            placeholder="Email"
+            type="email"
+            class="input"
+            autofocus
+          ></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="isFieldInvalid('email')">
+          <p>{{ getErrorMessage('email') }}</p>
+        </ion-text>
+
+        <!-- Password -->
+        <ion-item>
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input
+            formControlName="password"
+            placeholder="Mot de passe"
+            type="password"
+            class="input"
+          ></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="isFieldInvalid('password')">
+          <p>{{ getErrorMessage('password') }}</p>
+        </ion-text>
+
+        <!-- Ligne de séparation -->
+        <div class="divider-line"></div>
+
+        <!-- Mot de passe oublié -->
+        <div class="forgot-password">
+          <a routerLink="/reset" class="forgot-link">Mot de passe oublié ?</a>
+        </div>
+
+        <!-- Bouton de connexion -->
+        <ion-button
+          type="submit"
+          class="login-button"
+          [disabled]="loginForm.invalid || isLoading"
+          expand="block"
+        >
+          <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+          <span *ngIf="!isLoading">Se connecter</span>
+        </ion-button>
+
+        <!-- Séparateur -->
+        <div class="divider">
+          <span class="divider-text">OU</span>
+        </div>
+
+        <!-- Lien d'inscription -->
+        <div class="signup-section">
+          <p class="signup-text">
+            Pas encore de compte ?
+            <a routerLink="/registre" class="signup-link">S'inscrire</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

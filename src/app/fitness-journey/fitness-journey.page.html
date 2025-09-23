@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-button expand="block"  routerLink="/tabs/tab1">
+    <ion-icon name="caret-back"></ion-icon>  </ion-button>
+</ion-header>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="content-half">
+    <app-daily-progression   
+      [totalCalories]="nutritionData.calories"
+      [protein]="nutritionData.protein"
+      [carbs]="nutritionData.carbs"
+      [fat]="nutritionData.fat">
+    </app-daily-progression>
+    <!-- Water Consumption Card -->
+     
+  <ion-card class="ioncard" >
+    <ion-card-content style="margin-top: 20px;" class="no-margin" >
+      <h2>Water Consumption</h2>
+      <p>{{ message }}</p>
+      <div class="glass-container">
+        <div *ngFor="let glass of glasses; let i = index" 
+             class="glass" 
+             [class.filled]="glass" 
+             (click)="toggleGlass(i)">
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+    <app-activity-list style="margin-top: 20px;" class="no-margin"></app-activity-list>
+  </div>
+</ion-content>

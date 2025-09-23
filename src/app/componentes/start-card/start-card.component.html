@@ -1,0 +1,23 @@
+<ion-card [ngClass]="[gradient ? 'gradient-card' : '', className]" class="ioncard">
+  <ion-card-content class="ion-padding">
+    <div class="stat-header">
+      <div class="info">
+        <p class="title" [ngClass]="gradient ? 'text-faded' : 'text-muted'">{{ title }}</p>
+        <div class="value-row">
+          <span class="value">{{ value }}</span>
+          <span class="unit" *ngIf="unit">{{ unit }}</span>
+        </div>
+        <div class="trend" *ngIf="trend">
+          <span class="trend-value" [ngClass]="trend.isPositive ? 'success' : 'danger'">
+            {{ trend.isPositive ? '+' : '' }}{{ trend.value }}%
+          </span>
+          <span class="trend-text">vs hier</span>
+        </div>
+      </div>
+
+      <div class="icon-wrapper" [ngClass]="gradient ? 'bg-faded' : 'bg-primary-light'">
+        <ion-icon [name]="icon" size="small"></ion-icon>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

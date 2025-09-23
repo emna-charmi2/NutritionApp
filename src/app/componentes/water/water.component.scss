@@ -1,0 +1,28 @@
+.glasses-container {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .glass-button {
+    padding: 8px 12px;
+    border: 1px solid #007aff;
+    border-radius: 8px;
+    background-color: white;
+    color: #007aff;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .glass-button.active {
+    background-color: #007aff;
+    color: white;
+  }
+  
+  .glass-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

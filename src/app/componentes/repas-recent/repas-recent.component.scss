@@ -1,0 +1,94 @@
+.meal-card {
+    margin: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  
+    ion-card-header {
+      background: var(--ion-color-light);
+      border-bottom: 1px solid var(--ion-color-light-shade);
+      
+      ion-card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--ion-color-dark);
+      }
+    }
+  
+    .loading-spinner {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+  
+    .meal-item {
+      --padding-start: 0;
+      --inner-padding-end: 0;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--ion-color-light-shade);
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      ion-button {
+        margin-right: 12px;
+        --padding-start: 0;
+        --padding-end: 0;
+      }
+  
+      .meal-macros {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 8px 0;
+        font-size: 0.9rem;
+  
+        .separator {
+          color: var(--ion-color-medium);
+          margin: 0 8px;
+        }
+  
+        .calories {
+          color: var(--ion-color-danger);
+          font-weight: 500;
+        }
+  
+        .protein { color: #1976d2; }
+        .glucide { color: #ff9800; }
+        .lipide { color: #f06292; }
+      }
+  
+      .meal-meta {
+        display: flex;
+        align-items: center;
+        font-size: 0.8rem;
+        color: var(--ion-color-medium);
+        margin-top: 4px;
+  
+        ion-icon {
+          font-size: 0.9rem;
+          margin-right: 4px;
+        }
+  
+        span {
+          margin-right: 12px;
+        }
+      }
+    }
+  
+    .empty-state {
+      --min-height: 120px;
+      text-align: center;
+  
+      ion-icon {
+        color: var(--ion-color-medium);
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+      }
+  
+      p {
+        color: var(--ion-color-medium);
+        margin: 0;
+      }
+    }
+  }

@@ -1,0 +1,21 @@
+<div class="water-intake">
+  <div class="water-title">Water Consumption</div>
+  <div class="water-amount">{{ consumed }} ml</div>
+  <ion-progress-bar [value]="consumed / total" color="secondary"></ion-progress-bar>
+
+  <div class="water-glasses">
+    {{ glassesConsumed }} of {{ totalGlasses }} glasses of water
+  </div>
+
+  <div class="glasses-container">
+    <button 
+      *ngFor="let glass of glasses; let i = index"
+      (click)="drinkGlass(i)"
+      [disabled]="i > glassesConsumed"
+      [class.active]="i < glassesConsumed"
+      class="glass-button"
+    >
+      Verre {{ i + 1 }}
+    </button>
+  </div>
+</div>

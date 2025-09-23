@@ -1,0 +1,62 @@
+
+<ion-card class="ioncard">
+  <div class="chart-container">
+<ion-card-content>
+  <div class="activities-list">
+    <ion-grid>
+      <!-- First Row -->
+      <ion-row>
+        <!-- Walk Card -->
+        <ion-col size="6">
+          <ion-card class="progress-card walk">
+            <ion-card-content>
+              <i class="fa-solid fa-person-walking"></i>          
+              <h3>Walk</h3>
+              <p>{{ steps }} Steps</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <!-- Workouts Card -->
+        <ion-col size="6">
+          <ion-card class="progress-card workouts">
+            <ion-card-content>
+              <i class="fa-solid fa-dumbbell"></i>              
+              <h3>Workouts</h3>
+              <p>{{ workouts }} Minutes</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      
+      <!-- Second Row -->
+      <ion-row>
+        <!-- Sleep Card -->
+        <ion-col size="6">
+          <ion-card class="progress-card sleep">
+            <ion-card-content>
+              <i class="fa-solid fa-moon"></i>
+              <h3>Sleep</h3>
+              <p>{{ sleep }} Hours</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        
+        <!-- Meditation Card -->
+        <ion-col size="6">
+          <ion-card class="progress-card meditation">
+            <ion-card-content>
+              <i class="fa-solid fa-dumbbell"></i>              
+
+              <h3>Meditation</h3>
+              <p>{{ meditation }} Minutes</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-card-content>
+  </div>
+  
+</ion-card>

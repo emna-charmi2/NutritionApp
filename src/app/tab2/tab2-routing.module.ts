@@ -4,8 +4,8 @@ import { Tab2Page } from './tab2.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: Tab2Page,
+    path: '', // Chemin vide car c'est déjà géré par le tabs-routing
+    component: Tab2Page
   }
 ];
 

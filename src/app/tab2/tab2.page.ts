@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+// tab2.page.ts
+import { Component,  } from '@angular/core';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
-  standalone: false,
+  standalone:false,
 })
-export class Tab2Page {
-
-  constructor() {}
+export class Tab2Page   {
 
 }

@@ -1,0 +1,139 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Registre</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="regForm" novalidate>
+    <!-- Étape 1 : Informations personnelles -->
+    <div *ngIf="currentStep === 1" class="stepper-step">
+      <h2>Informations personnelles</h2>
+      
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input formControlName="nom" type="text" placeholder="Nom de famille *"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('nom')">
+        <span *ngIf="regForm.get('nom')?.errors?.['required']">Nom requis</span>
+        <span *ngIf="regForm.get('nom')?.errors?.['minlength']">Minimum 2 caractères</span>
+      </ion-note>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input formControlName="prenom" type="text" placeholder="Prénom *"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('prenom')">
+        <span *ngIf="regForm.get('prenom')?.errors?.['required']">Prénom requis</span>
+        <span *ngIf="regForm.get('prenom')?.errors?.['minlength']">Minimum 2 caractères</span>
+      </ion-note>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input formControlName="email" type="email" placeholder="Email *" autocapitalize="off"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('email')">
+        <span *ngIf="regForm.get('email')?.errors?.['required']">Email requis</span>
+        <span *ngIf="regForm.get('email')?.errors?.['pattern']">Format email invalide</span>
+      </ion-note>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input formControlName="password" type="password" placeholder="Mot de passe *"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('password')">
+        <span *ngIf="regForm.get('password')?.errors?.['required']">Mot de passe requis</span>
+        <span *ngIf="regForm.get('password')?.errors?.['pattern']">
+          8 caractères min avec majuscule, minuscule, chiffre et spécial
+        </span>
+      </ion-note>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="male-female" slot="start"></ion-icon>
+        <ion-select formControlName="gender" placeholder="Sexe *">
+          <ion-select-option value="female">Femme</ion-select-option>
+          <ion-select-option value="male">Homme</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('gender')">
+        Veuillez sélectionner votre sexe
+      </ion-note>
+    </div>
+
+    <!-- Étape 2 : Données corporelles -->
+    <div *ngIf="currentStep === 2" class="stepper-step">
+      <h2>Mesures corporelles</h2>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="resize-outline" slot="start"></ion-icon>
+        <ion-input formControlName="height" type="number" placeholder="Taille (cm) *"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('height')">
+        <span *ngIf="regForm.get('height')?.errors?.['required']">Taille requise</span>
+        <span *ngIf="regForm.get('height')?.errors?.['min'] || regForm.get('height')?.errors?.['max']">
+          100-250 cm
+        </span>
+      </ion-note>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="barbell-outline" slot="start"></ion-icon>
+        <ion-input formControlName="weight" type="number" placeholder="Poids (kg) *"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('weight')">
+        <span *ngIf="regForm.get('weight')?.errors?.['required']">Poids requis</span>
+        <span *ngIf="regForm.get('weight')?.errors?.['min'] || regForm.get('weight')?.errors?.['max']">
+          30-200 kg
+        </span>
+      </ion-note>
+    </div>
+
+    <!-- Étape 3 : Style de vie -->
+    <div *ngIf="currentStep === 3" class="stepper-step">
+      <h2>Style de vie</h2>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="walk-outline" slot="start"></ion-icon>
+        <ion-select formControlName="activityLevel"  placeholder="Activité physique *">
+          <ion-select-option value="none">Sédentaire</ion-select-option>
+          <ion-select-option value="light">Léger (1-3j/sem)</ion-select-option>
+          <ion-select-option value="moderate">Modéré (3-5j/sem)</ion-select-option>
+          <ion-select-option value="active">Actif (6-7j/sem)</ion-select-option>
+          <ion-select-option value="very_active">Très actif</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('activityLevel')">
+        Veuillez sélectionner votre niveau
+      </ion-note>
+
+      <ion-item lines="full" class="input-item">
+        <ion-icon name="flag-outline" slot="start"></ion-icon>
+        <ion-select formControlName="goal"  placeholder="Objectif *">
+          <ion-select-option value="weight_loss">Perte de poids</ion-select-option>
+          <ion-select-option value="weight_gain">Prise de masse</ion-select-option>
+          <ion-select-option value="maintenance">Maintien</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-note color="danger" *ngIf="shouldShowError('goal')">
+        Veuillez sélectionner un objectif
+      </ion-note>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation-buttons">
+      <ion-button fill="clear" (click)="previousStep()" [disabled]="currentStep === 1">
+        <ion-icon name="arrow-back" slot="start"></ion-icon>
+        Précédent
+      </ion-button>
+      
+      <ion-button *ngIf="currentStep < 3" (click)="nextStep()" [disabled]="!isCurrentStepValid()">
+        Suivant
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      </ion-button>
+      
+      <ion-button *ngIf="currentStep === 3" color="success" (click)="signUp()" [disabled]="regForm.invalid || isSubmitting">
+        <ion-icon name="checkmark" slot="start"></ion-icon>
+        S'inscrire
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,1077 @@
+<ion-content scrollX="true" class="recipes-container">
+  <ion-button expand="block" color="secondary" routerLink="/tabs/tab1">
+    <i class="fa-solid fa-backward-step"></i>
+  </ion-button>
+  
+  <!-- === Section: Breakfast === -->
+  <ion-text color="primary">
+    <h2 class="section-title">Breakfast</h2>
+  </ion-text>
+
+  <!-- Omelette -->
+  <div class="cards-container">
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/omlette.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 300 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 22g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 5g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 20g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Omelette aux légumes et fromage</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">10 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Omelette aux légumes et fromage', 'Breakfast', 300, 22, 5, 20)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients' ? 'primary' : 'primary'" (click)="toggleSection('ingredients')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>2 œufs</li>
+              <li>1 blanc d'œuf</li>
+              <li>½ poivron coupé en dés</li>
+              <li>1 petite tomate coupée</li>
+              <li>30 g de fromage râpé (type Edam ou Gruyère)</li>
+              <li>1 c. à café d'huile d'olive</li>
+              <li>Sel, poivre, origan</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Battez les œufs avec le blanc d'œuf, le sel et les épices.</li>
+              <li>Faites revenir les légumes dans une poêle avec l'huile d'olive pendant 2 minutes.</li>
+              <li>Versez les œufs battus, ajoutez le fromage, couvrez et laissez cuire à feu doux 5-6 minutes.</li>
+              <li>Servez chaud.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Smoothie -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/Peanut-Butter-Banana-Smoothie.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 280 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 7g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 33g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 16g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Smoothie banane beurre de cacahuète</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">3 min (pas de cuisson)</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Smoothie banane beurre de cacahuète', 'Breakfast', 280, 7, 33, 16)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients1' ? 'primary' : 'primary'" (click)="toggleSection('ingredients1')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation1' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation1')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients1'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>1 banane moyenne (env. 120 g)</li>
+              <li>1 cuillère à soupe de beurre de cacahuète naturel (15 g)</li>
+              <li>200 ml de lait végétal non sucré (amande ou soja)</li>
+              <li>1 cuillère à soupe de flocons d’avoine (10 g)</li>
+              <li>1/2 cuillère à café de cannelle (optionnel)</li>
+              <li>1 dose de protéine en poudre nature ou vanille (optionnel)</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation1'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Coupe la banane en morceaux.</li>
+              <li>Ajoute tous les ingrédients dans un blender.</li>
+              <li>Verse dans un grand verre et savoure immédiatement.</li>
+            </ol>
+            <div class="tip-note">
+              <ion-icon name="bulb-outline"></ion-icon>
+              <span>une dose de protéine en poudre (20 g de protéines) :</span><br>
+              <span>  Calories : ~370 kcal | Protéines : ~26 g | Glucides : ~34 g | Lipides : ~13 g</span>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Toast -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/toast.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 290 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 11g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 20g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 18g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Toast complet à l'avocat et œufs</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">10 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Toast complet à l\'avocat et œufs', 'Breakfast', 290, 11, 20, 18)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients2' ? 'primary' : 'primary'" (click)="toggleSection('ingredients2')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation2' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation2')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients2'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>1 tranche de pain complet (env. 40 g)</li>
+              <li>1/2 avocat moyen (env. 70 g)</li>
+              <li>1 œuf</li>
+              <li>Sel, poivre</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation2'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Fais griller la tranche de pain complet.</li>
+              <li>Écrase l’avocat dans un bol, ajoute un filet de jus de citron, sel et poivre.</li>
+              <li>Étale l’avocat écrasé sur le pain grillé.</li>
+              <li>Prépare l'œuf et Dépose l’œuf sur le toast.</li>
+            </ol>
+            <div class="tip-note">
+              <ion-icon name="bulb-outline"></ion-icon>
+              <span>Pour plus de protéines : ajoute un 2ᵉ œuf ou une fine tranche de saumon fumé.</span><br>
+            </div>
+            <div class="tip-note">
+              <ion-icon name="bulb-outline"></ion-icon>
+              <span>Pour réduire les lipides : utilise 1/3 d’avocat ou un œuf uniquement blanc + 1 entier.</span>
+            </div>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Porridge -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/4.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 290 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 14g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 30g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 10g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Porridge à l’avoine et yaourt grec</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">8 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Porridge à l’avoine et yaourt grec', 'Breakfast', 290, 14, 30, 10)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients3' ? 'primary' : 'primary'" (click)="toggleSection('ingredients3')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation3' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation3')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients3'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>40 g de flocons d’avoine</li>
+              <li>100 ml de lait végétal non sucré (amande, soja, avoine...)</li>
+              <li>1 cuillère à café de graines de chia ou de lin</li>
+              <li>1/2 banane ou 1 fruit frais coupé (ex : fraises, myrtilles, kiwi...)</li>
+              <li>100 g de yaourt grec nature 0 à 5 % MG</li>
+              <li>Toppings : fruits secs, noix, beurre de cacahuète (facultatif selon objectif)</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation3'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Dans une casserole, chauffe les flocons d’avoine avec le lait végétal à feu doux (3 à 5 min) en remuant.</li>
+              <li>Une fois la texture crémeuse, retire du feu et ajoute les graines de chia si souhaité.</li>
+              <li>Laisse tiédir un peu, puis ajoute le yaourt grec pour une texture onctueuse et fraîche.</li>
+              <li>Coupe les fruits frais et ajoute-les par-dessus.</li>
+              <li>Ajoute un topping sain si désiré (amandes, noix, beurre de cacahuète...).</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <div class="btn-container">
+      <div class="add-recipe-btn">
+        <ion-button expand="block" color="success" routerLink="/ajouter-recette">
+          <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+          Ajouter une recette spécifique
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Section: Lunch === -->
+  <ion-text color="success">
+    <h2 class="section-title">Lunch</h2>
+  </ion-text>
+
+  <!-- Poulet grillé -->
+  <div class="scrolling-wrapper">
+    <ion-card class="recipe-card">
+      <div class="image-container">
+        <img src="../../assets/icon/riz.png" alt="Recette" class="recipe-image">
+        <div class="nutrition-overlay">
+          <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 400 kcal</div>
+          <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 32g Prot</div>
+          <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 30g Gluc</div>
+          <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 14g Lip</div>
+        </div>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Poulet grillé + riz complet + légumes sautés</ion-card-title>
+        <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center;">
+            <ion-icon name="time-outline"></ion-icon>
+            <span style="margin: 0 8px;">35-40 min</span>
+          </div>
+          <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Poulet grillé + riz complet + légumes sautés', 'Lunch', 400, 32, 30, 14)">
+            <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="action-buttons">
+        <ion-button expand="block" [color]="activeSection === 'ingredients11' ? 'primary' : 'primary'" (click)="toggleSection('ingredients11')">
+          <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+        </ion-button>
+        <ion-button expand="block" [color]="activeSection === 'preparation11' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation11')">
+          <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+        </ion-button>
+      </ion-card-content>
+      <div *ngIf="activeSection === 'ingredients11'" @fadeIn>
+        <ion-card-content>
+          <h3>Ingrédients:</h3>
+          <ul class="ingredients-list">
+            <li>120 g de blanc de poulet</li>
+            <li>30 g de riz complet cuit</li>
+            <li>150 g de légumes variés sautés (courgette, carotte, poivron, brocoli...)</li>
+            <li>1 cuillère à café d’huile d’olive (5 g) pour la cuisson</li>
+            <li>Épices au choix : paprika, curry, ail, herbes de Provence, curcuma, poivre...</li>
+          </ul>
+        </ion-card-content>
+      </div>
+      <div *ngIf="activeSection === 'preparation11'" @fadeIn>
+        <ion-card-content>
+          <h3>Préparation:</h3>
+          <ol class="preparation-steps">
+            <li>Fais mariner le poulet dans des épices + citron pendant 30 min pour le rendre tendre.</li>
+            <li>Fais cuire le riz complet.</li>
+            <li>Dans une poêle, ajoute les légumes avec 1 c. à café d’huile d’olive + épices à feu moyen pendant 5 à 8 min.</li>
+            <li>Fais griller le blanc de poulet à la poêle ou au grill avec un spray d’huile.</li>
+            <li>Assemble dans une assiette.</li>
+          </ol>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+
+  <!-- Salade au thon -->
+  <div class="scrolling-wrapper">
+    <ion-card class="recipe-card">
+      <div class="image-container">
+        <img src="../../assets/icon/salade.png" alt="Recette" class="recipe-image">
+        <div class="nutrition-overlay">
+          <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 320 kcal</div>
+          <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 25g Prot</div>
+          <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 22g Gluc</div>
+          <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 13g Lip</div>
+        </div>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Salade variée au thon + pain complet</ion-card-title>
+        <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center;">
+            <ion-icon name="time-outline"></ion-icon>
+            <span style="margin: 0 8px;">35-40 min</span>
+          </div>
+          <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Salade variée au thon + pain complet', 'Lunch', 320, 25, 22, 13)">
+            <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="action-buttons">
+        <ion-button expand="block" [color]="activeSection === 'ingredients4' ? 'primary' : 'primary'" (click)="toggleSection('ingredients4')">
+          <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+        </ion-button>
+        <ion-button expand="block" [color]="activeSection === 'preparation4' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation4')">
+          <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+        </ion-button>
+      </ion-card-content>
+      <div *ngIf="activeSection === 'ingredients4'" @fadeIn>
+        <ion-card-content>
+          <h3>Ingrédients:</h3>
+          <ul class="ingredients-list">
+            <li>100 g de thon au naturel (égoutté)</li>
+            <li>150 g de légumes crus variés au choix : Laitue, Tomates cerises, concombres, carottes râpées, radis</li>
+            <li>1 c. à café d’huile d’olive (5 g)</li>
+            <li>Sel, poivre, herbes (persil, origan, ciboulette)</li>
+            <li>1 tranche de pain complet (env. 40 g)</li>
+          </ul>
+        </ion-card-content>
+      </div>
+      <div *ngIf="activeSection === 'preparation4'" @fadeIn>
+        <ion-card-content>
+          <h3>Préparation:</h3>
+          <ol class="preparation-steps">
+            <li>Prépare la salade avec les légumes frais lavés et découpés.</li>
+            <li>Ajoute le thon par-dessus.</li>
+            <li>Fais griller ta tranche de pain complet.</li>
+            <li>Dresse joliment dans une assiette ou un bol.</li>
+          </ol>
+          <div class="tip-note">
+            <ion-icon name="bulb-outline"></ion-icon>
+            <span>Pour plus de satiété : ajoute des protéines végétales (lentilles, pois chiches) ou un œuf.</span><br>
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+
+  <!-- Tajine -->
+  <div class="scrolling-wrapper">
+    <ion-card class="recipe-card">
+      <div class="image-container">
+        <img src="../../assets/icon/tajin.png" alt="Recette" class="recipe-image">
+        <div class="nutrition-overlay">
+          <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 280 kcal/per</div>
+          <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 33g Prot/per</div>
+          <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 18g Gluc/per</div>
+          <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 7g Lip/per</div>
+        </div>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Tajine au poulet et légumes (2 personnes)</ion-card-title>
+        <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center;">
+            <ion-icon name="time-outline"></ion-icon>
+            <span style="margin: 0 8px;">30 min</span>
+          </div>
+          <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Tajine au poulet et légumes', 'Lunch', 280, 33, 18, 7)">
+            <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="action-buttons">
+        <ion-button expand="block" [color]="activeSection === 'ingredients12' ? 'primary' : 'primary'" (click)="toggleSection('ingredients12')">
+          <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+        </ion-button>
+        <ion-button expand="block" [color]="activeSection === 'preparation12' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation12')">
+          <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+        </ion-button>
+      </ion-card-content>
+      <div *ngIf="activeSection === 'ingredients12'" @fadeIn>
+        <ion-card-content>
+          <h3>Ingrédients:</h3>
+          <ul class="ingredients-list">
+            <li>120 g de blanc de poulet</li>
+            <li>1 petite pomme de terre (ou patate douce)</li>
+            <li>1 petit oignon</li>
+            <li>Une petite poignée de persil frais ciselé</li>
+            <li>½ cuillère à café d’épices (poivre noir et baharat), pincée de sel</li>
+            <li>2 œufs (ou 1 œuf entier + 1 blanc)</li>
+            <li>1 cuillère à café d’huile d’olive</li>
+            <li>15 g de fromage râpé allégé (optionnel)</li>
+          </ul>
+        </ion-card-content>
+      </div>
+      <div *ngIf="activeSection === 'preparation12'" @fadeIn>
+        <ion-card-content>
+          <h3>Préparation:</h3>
+          <ol class="preparation-steps">
+            <li>Faire revenir l’oignon dans l’huile d’olive.</li>
+            <li>Ajouter le poulet en dés, faire dorer.</li>
+            <li>Assaisonner avec épices et sel, ajouter un peu d’eau, laisser mijoter.</li>
+            <li>Cuire la pomme de terre à la vapeur, couper en dés.</li>
+            <li>Mélanger poulet, pommes de terre, persil, œufs et fromage.</li>
+            <li>Verser dans un moule huilé.</li>
+            <li>Cuire au four à 180 °C pendant 30-35 minutes.</li>
+          </ol>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+
+  <!-- Boulettes de dinde -->
+  <div class="scrolling-wrapper">
+    <ion-card class="recipe-card">
+      <div class="image-container">
+        <img src="../../assets/icon/dinde.png" alt="Recette" class="recipe-image">
+        <div class="nutrition-overlay">
+          <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 300 kcal</div>
+          <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 35g Prot</div>
+          <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 8g Gluc</div>
+          <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 12g Lip</div>
+        </div>
+      </div>
+      <ion-card-header>
+        <ion-card-title>Boulettes de dinde + légumes vapeur</ion-card-title>
+        <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center;">
+            <ion-icon name="time-outline"></ion-icon>
+            <span style="margin: 0 8px;">25 min</span>
+          </div>
+          <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Boulettes de dinde + légumes vapeur', 'Lunch', 300, 35, 8, 12)">
+            <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content class="action-buttons">
+        <ion-button expand="block" [color]="activeSection === 'ingredients5' ? 'primary' : 'primary'" (click)="toggleSection('ingredients5')">
+          <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+        </ion-button>
+        <ion-button expand="block" [color]="activeSection === 'preparation5' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation5')">
+          <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+        </ion-button>
+      </ion-card-content>
+      <div *ngIf="activeSection === 'ingredients5'" @fadeIn>
+        <ion-card-content>
+          <h3>Ingrédients:</h3>
+          <ul class="ingredients-list">
+            <li>120 g de viande hachée de dinde maigre</li>
+            <li>1 petite échalote ou oignon (optionnel)</li>
+            <li>Sel, poivre, paprika, cumin (selon goût)</li>
+            <li>1 cuillère à café d’huile d’olive (pour la cuisson)</li>
+            <li>150 g de légumes vapeur variés (brocoli, carottes, haricots verts, chou-fleur...)</li>
+            <li>(Optionnel) 1 tranche de pain complet ou 30 g de riz complet en accompagnement</li>
+          </ul>
+        </ion-card-content>
+      </div>
+      <div *ngIf="activeSection === 'preparation5'" @fadeIn>
+        <ion-card-content>
+          <h3>Préparation:</h3>
+          <ol class="preparation-steps">
+            <li>Mélanger la viande hachée de dinde avec l’ail, l’échalote, les herbes et les épices.</li>
+            <li>Former des petites boulettes de taille uniforme.</li>
+            <li>Chauffer une poêle avec l’huile d’olive.</li>
+            <li>Cuire les boulettes 10-12 minutes en les retournant régulièrement.</li>
+            <li>Cuire les légumes à la vapeur pendant 8-10 minutes jusqu’à tendreté.</li>
+          </ol>
+          <div class="tip-note">
+            <ion-icon name="bulb-outline"></ion-icon>
+            <span>Avec une tranche de pain complet (40 g) → environ 380 kcal, 35 g protéines, 28 g glucides, 12 g lipides</span><br>
+            <span>Avec 30 g de riz complet cuit → environ 350 kcal, 35 g protéines, 20 g glucides, 12 g lipides</span>
+          </div>
+        </ion-card-content>
+      </div>
+    </ion-card>
+  </div>
+
+  <div class="btn-container">
+    <div class="add-recipe-btn">
+      <ion-button expand="block" color="success" routerLink="/ajouter-recette">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Ajouter une recette spécifique
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- === Section: Sweets === -->
+  <ion-text color="warning">
+    <h2 class="section-title">Sweets</h2>
+  </ion-text>
+  <div class="cards-container">
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/brownie.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 131 kcal/part</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 8g Prot/part</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 10g Gluc/part</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 4g Lip/part</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Brownie healthy au cacao et yaourt grec</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">25 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Brownie healthy au cacao et yaourt grec', 'Sweets', 131, 8, 10, 4)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients6' ? 'primary' : 'primary'" (click)="toggleSection('ingredients6')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation6' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation6')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients6'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients: (9 parts)</h3>
+            <ul class="ingredients-list">
+              <li>2 œufs</li>
+              <li>120 g de yaourt grec nature (0 à 2% MG)</li>
+              <li>30 g de poudre de cacao non sucré</li>
+              <li>50 g de farine d’avoine</li>
+              <li>50 g de compote de pomme sans sucre ajouté</li>
+              <li>1 à 2 c. à soupe miel</li>
+              <li>1 c. à café d'extrait de vanille</li>
+              <li>1 c. à café de levure chimique</li>
+              <li>1 pincée de sel</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation6'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Préchauffer le four à 175°C (chaleur tournante).</li>
+              <li>Dans un saladier, battre les œufs avec le yaourt grec, la compote, le sirop d’érable et l’extrait de vanille.</li>
+              <li>Ajouter la farine d’avoine, la protéine en poudre (si utilisée), le cacao, la levure et le sel. Bien mélanger.</li>
+              <li>Incorporer les pépites de chocolat ou les noix si souhaité.</li>
+              <li>Verser la pâte dans un moule carré tapissé de papier cuisson ou légèrement huilé.</li>
+              <li>Cuire au four pendant 20 à 25 minutes. Le centre doit rester moelleux.</li>
+              <li>Laisser refroidir complètement avant de découper en carrés.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Crêpe -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/crépe.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 220 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 8g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 23g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 8g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Crêpe protéinée à la banane</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">10 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Crêpe protéinée à la banane', 'Sweets', 220, 8, 23, 8)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients7' ? 'primary' : 'primary'" (click)="toggleSection('ingredients7')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation7' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation7')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients7'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>1 banane bien mûre</li>
+              <li>2 œufs</li>
+              <li>30 g de flocons d’avoine ou farine d’avoine</li>
+              <li>1 c. à soupe de protéine en poudre (facultatif)</li>
+              <li>1/2 c. à café de levure chimique</li>
+              <li>1 c. à café d’extrait de vanille (facultatif)</li>
+              <li>1 pincée de cannelle (facultatif)</li>
+              <li>Huile de coco ou d’olive pour la cuisson</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation7'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Écraser la banane dans un bol jusqu’à obtenir une purée lisse.</li>
+              <li>Ajouter les œufs et bien fouetter.</li>
+              <li>Incorporer les flocons ou la farine d’avoine, la levure, la protéine en poudre, la vanille et la cannelle. Bien mélanger.</li>
+              <li>Laisser reposer la pâte 5 à 10 minutes.</li>
+              <li>Faire chauffer une poêle antiadhésive avec un peu d’huile.</li>
+              <li>Verser une petite louche de pâte et cuire 2-3 minutes de chaque côté jusqu’à doré.</li>
+              <li>Servir chaud avec des fruits frais, un peu de yaourt grec ou une touche de beurre d’amande.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Pudding -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/chia.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 210 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 6g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 12g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 10g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Pudding de chia au lait et fruits</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">5 min + repos</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Pudding de chia au lait et fruits', 'Sweets', 210, 6, 12, 10)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients8' ? 'primary' : 'primary'" (click)="toggleSection('ingredients8')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation8' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation8')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients8'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>3 c. à soupe de graines de chia (environ 30 g)</li>
+              <li>200 ml de lait (végétal ou animal, selon préférence)</li>
+              <li>1 c. à café de sirop d’érable ou de miel (optionnel)</li>
+              <li>1/2 c. à café d’extrait de vanille (facultatif)</li>
+              <li>Fruits frais au choix : banane, fraises, myrtilles, mangue, kiwi…</li>
+              <li>(Optionnel) Quelques noix, graines ou copeaux de coco pour le topping</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation8'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Dans un bol ou un petit bocal, mélanger le lait, les graines de chia, le sirop d’érable et la vanille.</li>
+              <li>Remuer vigoureusement pour bien répartir les graines et éviter les grumeaux.</li>
+              <li>Laisser reposer 5 à 10 minutes, puis mélanger de nouveau.</li>
+              <li>Placer au réfrigérateur pendant au moins 2 heures (idéalement toute la nuit).</li>
+              <li>Avant de déguster, bien remuer si le pudding est trop compact.</li>
+              <li>Ajouter les fruits frais et les toppings de votre choix.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Cookies -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/cookies.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 120 kcal/cookie</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 4g Prot/cookie</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 9g Gluc/cookie</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 8g Lip/cookie</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Cookies flocons d’avoine et beurre de cacahuète</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">12 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Cookies flocons d’avoine et beurre de cacahuète', 'Sweets', 120, 4, 9, 8)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients9' ? 'primary' : 'primary'" (click)="toggleSection('ingredients9')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation9' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation9')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients9'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients (pour 8 à 10 cookies):</h3>
+            <ul class="ingredients-list">
+              <li>100 g de flocons d’avoine</li>
+              <li>120 g de beurre de cacahuète (100 % naturel, sans sucre ajouté)</li>
+              <li>1 œuf</li>
+              <li>1 à 2 c. à soupe de sirop d’érable ou miel</li>
+              <li>1/2 c. à café de levure chimique</li>
+              <li>1/2 c. à café de cannelle (facultatif)</li>
+              <li>1 pincée de sel</li>
+              <li>Optionnel : pépites de chocolat noir, noix ou graines</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation9'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Préchauffer le four à 180°C.</li>
+              <li>Dans un saladier, mélanger le beurre de cacahuète, l’œuf et le sirop d’érable.</li>
+              <li>Ajouter les flocons d’avoine, la levure, le sel et la cannelle. Bien mélanger jusqu’à obtenir une pâte homogène.</li>
+              <li>Incorporer les pépites de chocolat ou autres ingrédients optionnels.</li>
+              <li>Former des boules de pâte avec les mains et les aplatir légèrement sur une plaque recouverte de papier cuisson.</li>
+              <li>Cuire au four pendant 10 à 12 minutes, jusqu’à ce que les bords soient légèrement dorés.</li>
+              <li>Laisser refroidir sur une grille avant de déguster.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="btn-container">
+    <div class="add-recipe-btn">
+      <ion-button expand="block" color="success" routerLink="/ajouter-recette">
+        <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+        Ajouter une recette spécifique
+      </ion-button>
+    </div>
+  </div>
+
+  <!-- === Section: Dinner === -->
+  <ion-text color="tertiary">
+    <h2 class="section-title">Dinner</h2>
+  </ion-text>
+
+  <!-- Salade de lentilles -->
+  <div class="cards-container">
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/lentille.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 400 kcal</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 30g Prot</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 20g Gluc</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 0g Lip</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Salade de lentilles + thon + œuf</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">10 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Salade de lentilles + thon + œuf', 'Dinner', 400, 30, 20, 0)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients44' ? 'primary' : 'primary'" (click)="toggleSection('ingredients44')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation44' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation44')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients44'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>100 g de lentilles vertes cuites (environ 40 g crues)</li>
+              <li>1 œuf dur</li>
+              <li>1 petite boîte de thon au naturel (environ 100 g égoutté)</li>
+              <li>1/2 oignon rouge (ou échalote), émincé</li>
+              <li>1/2 tomate ou quelques tomates cerises</li>
+              <li>1 poignée de persil ou coriandre fraîche (facultatif)</li>
+              <li>1 c. à café de moutarde (optionnel)</li>
+              <li>1 c. à soupe d’huile d’olive</li>
+              <li>1 c. à soupe de jus de citron ou vinaigre balsamique</li>
+              <li>Sel et poivre au goût</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation44'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Cuire les lentilles si elles ne sont pas déjà prêtes (15-20 minutes dans l’eau bouillante).</li>
+              <li>Cuire l’œuf pendant 8-10 minutes pour qu’il soit bien dur. Écaler et couper en quartiers.</li>
+              <li>Dans un saladier, mélanger les lentilles, le thon égoutté, l’oignon, la tomate et les herbes.</li>
+              <li>Ajouter la moutarde, l’huile d’olive et le jus de citron. Saler, poivrer et bien mélanger.</li>
+              <li>Ajouter les quartiers d’œuf sur le dessus avant de servir.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Pommes de terre farcies -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/pommedeterre.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 320 kcal/part</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 20g Prot/part</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 30g Gluc/part</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 12g Lip/part</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Pommes de terre farcies au thon et légumes</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">30 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Pommes de terre farcies au thon et légumes', 'Dinner', 320, 20, 30, 12)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients10' ? 'primary' : 'primary'" (click)="toggleSection('ingredients10')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation10' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation10')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients10'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients:</h3>
+            <ul class="ingredients-list">
+              <li>2 grosses pommes de terre (environ 250 g chacune)</li>
+              <li>1 boîte de thon au naturel (environ 120 g égoutté)</li>
+              <li>1/2 poivron (rouge ou vert), coupé en petits dés</li>
+              <li>1 petite carotte râpée</li>
+              <li>1/2 oignon émincé</li>
+              <li>2 c. à soupe de yaourt grec ou fromage frais (type St Môret, optionnel)</li>
+              <li>1 c. à soupe d’huile d’olive</li>
+              <li>Épices : paprika, ail en poudre, sel, poivre</li>
+              <li>Un peu de persil frais ou coriandre (facultatif)</li>
+              <li>(Optionnel) Un peu de fromage râpé pour gratiner</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation10'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Laver les pommes de terre et les faire cuire à l’eau ou au four jusqu’à ce qu’elles soient tendres (30-40 min).</li>
+              <li>Une fois cuites, les couper en deux dans le sens de la longueur et creuser légèrement l’intérieur avec une cuillère (laisser un peu de chair).</li>
+              <li>Dans une poêle, faire revenir l’oignon, la carotte et le poivron avec l’huile d’olive pendant 5 à 7 minutes.</li>
+              <li>Ajouter le thon émietté, les épices, la chair des pommes de terre creusées, et le yaourt ou fromage frais. Mélanger.</li>
+              <li>Remplir les pommes de terre avec la farce.</li>
+              <li>(Optionnel) Saupoudrer de fromage râpé et faire gratiner au four 5 à 10 minutes à 180°C.</li>
+              <li>Parsemer de persil ou coriandre fraîche avant de servir.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Pizza d’aubergine -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/pizza.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 250 kcal/per</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 20g Prot/per</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 6g Gluc/per</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 15g Lip/per</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Pizza d’aubergine au thon et fromage</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">15 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Pizza d’aubergine au thon et fromage', 'Dinner', 250, 20, 6, 15)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients22' ? 'primary' : 'primary'" (click)="toggleSection('ingredients22')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation22' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation22')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients22'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients (pour 2 personnes):</h3>
+            <ul class="ingredients-list">
+              <li>1 grosse aubergine</li>
+              <li>1 boîte de thon au naturel (environ 120 g égoutté)</li>
+              <li>60 à 80 g de fromage râpé (mozzarella, emmental ou cheddar)</li>
+              <li>4 c. à soupe de purée de tomates ou sauce tomate maison</li>
+              <li>1 c. à café d’huile d’olive</li>
+              <li>1 pincée d’origan séché ou herbes de Provence</li>
+              <li>Sel et poivre au goût</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation22'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Préchauffer le four à 200°C.</li>
+              <li>Laver l’aubergine et la couper en rondelles d’environ 1 cm d’épaisseur.</li>
+              <li>Déposer les rondelles sur une plaque recouverte de papier cuisson, les badigeonner légèrement d’huile d’olive.</li>
+              <li>Enfourner 10 à 15 minutes pour les précuire (elles doivent être tendres).</li>
+              <li>Sortir les rondelles du four, puis étaler un peu de sauce tomate sur chacune.</li>
+              <li>Ajouter du thon émietté puis parsemer de fromage râpé.</li>
+              <li>Assaisonner avec sel, poivre et origan.</li>
+              <li>Remettre au four 5 à 10 minutes, jusqu’à ce que le fromage soit fondu et doré.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Spaghetti -->
+    <div class="scrolling-wrapper">
+      <ion-card class="recipe-card">
+        <div class="image-container">
+          <img src="../../assets/icon/spaghetti.png" alt="Recette" class="recipe-image">
+          <div class="nutrition-overlay">
+            <div class="nutrition-item"><ion-icon name="flame-outline"></ion-icon> 450 kcal/per</div>
+            <div class="nutrition-item"><ion-icon name="barbell-outline"></ion-icon> 18g Prot/per</div>
+            <div class="nutrition-item"><ion-icon name="nutrition-outline"></ion-icon> 60g Gluc/per</div>
+            <div class="nutrition-item"><ion-icon name="water-outline"></ion-icon> 12g Lip/per</div>
+          </div>
+        </div>
+        <ion-card-header>
+          <ion-card-title>Spaghetti with Mushrooms, Spinach & Ricotta</ion-card-title>
+          <ion-card-subtitle style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+              <ion-icon name="time-outline"></ion-icon>
+              <span style="margin: 0 8px;">25 min</span>
+            </div>
+            <ion-button fill="clear" style="--border-radius: 50px; width: 40px; height: 40px; margin: 0;" (click)="addMeal('Spaghetti with Mushrooms, Spinach & Ricotta', 'Dinner', 450, 18, 60, 12)">
+              <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="action-buttons">
+          <ion-button expand="block" [color]="activeSection === 'ingredients33' ? 'primary' : 'primary'" (click)="toggleSection('ingredients33')">
+            <ion-icon slot="start" name="list-outline"></ion-icon> Ingrédients
+          </ion-button>
+          <ion-button expand="block" [color]="activeSection === 'preparation33' ? 'secondary' : 'secondary'" (click)="toggleSection('preparation33')">
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon> Préparation
+          </ion-button>
+        </ion-card-content>
+        <div *ngIf="activeSection === 'ingredients33'" @fadeIn>
+          <ion-card-content>
+            <h3>Ingrédients (pour 2 personnes):</h3>
+            <ul class="ingredients-list">
+              <li>160 g spaghetti (whole wheat or regular)</li>
+              <li>200 g fresh mushrooms, sliced (e.g., cremini or button mushrooms)</li>
+              <li>2 handfuls of fresh spinach leaves</li>
+              <li>150 g ricotta cheese</li>
+              <li>2 cloves garlic, minced</li>
+              <li>2 tbsp olive oil</li>
+              <li>Salt and pepper to taste</li>
+              <li>Optional: fresh parsley or basil for garnish</li>
+              <li>Optional: grated Parmesan for serving</li>
+            </ul>
+          </ion-card-content>
+        </div>
+        <div *ngIf="activeSection === 'preparation33'" @fadeIn>
+          <ion-card-content>
+            <h3>Préparation:</h3>
+            <ol class="preparation-steps">
+              <li>Cook the spaghetti according to package instructions until al dente. Drain and set aside.</li>
+              <li>In a large pan, heat olive oil over medium heat. Add minced garlic and sauté for 1 minute until fragrant.</li>
+              <li>Add sliced mushrooms, cook for about 5-7 minutes until they release their moisture and become tender.</li>
+              <li>Add fresh spinach leaves and cook until wilted, about 2-3 minutes.</li>
+              <li>Season with salt and pepper.</li>
+              <li>Add the cooked spaghetti to the pan and toss everything together.</li>
+              <li>Remove from heat and stir in the ricotta cheese until creamy and well combined.</li>
+              <li>Serve immediately, garnished with fresh herbs and Parmesan if desired.</li>
+            </ol>
+          </ion-card-content>
+        </div>
+      </ion-card>
+    </div>
+
+    <div class="btn-container">
+      <div class="add-recipe-btn">
+        <ion-button expand="block" color="success" routerLink="/ajouter-recette">
+          <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+          Ajouter une recette spécifique
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

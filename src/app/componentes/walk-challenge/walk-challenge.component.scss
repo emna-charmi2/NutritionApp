@@ -1,0 +1,93 @@
+/* walk-challenge.component.scss */
+.challenge-card {
+    ion-card-header {
+      background: var(--ion-color-light);
+      padding-bottom: 0;
+    }
+    
+    .progress-container {
+      position: relative;
+      margin: 20px 0;
+      
+      .main-progress {
+        height: 20px;
+        border-radius: 10px;
+      }
+      
+      .progress-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 2px rgba(0,0,0,0.5);
+        font-size: 0.8rem;
+      }
+    }
+    
+    .streak-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 15px 0;
+    }
+    
+    .motivation-message {
+      background: rgba(var(--ion-color-warning-rgb), 0.1);
+      border-radius: 12px;
+      border-left: 4px solid var(--ion-color-warning);
+      margin: 20px 0;
+      overflow: hidden;
+      
+      ion-item {
+        --background: transparent;
+        --padding-start: 10px;
+        --inner-padding-end: 10px;
+        
+        h3 {
+          font-weight: bold;
+          margin-bottom: 5px;
+          font-size: 1rem;
+        }
+        
+        p {
+          font-size: 0.8rem;
+          color: var(--ion-color-medium);
+          margin-top: 0;
+        }
+      }
+    }
+    
+    .action-button {
+      margin-top: 20px;
+    }
+    
+    .already-walked {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: var(--ion-color-medium);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  /* Animation */
+  .animate__pulse {
+    animation: pulse 1s;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }

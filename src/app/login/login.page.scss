@@ -1,0 +1,154 @@
+/* Structure principale */
+ion-content {
+    --background: #f8f9fa;
+    display: flex;
+  }
+  
+  .login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* En-tête */
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subTitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin: 0;
+  }
+  
+  /* Carte du formulaire */
+  .form-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Champs de formulaire */
+  ion-item {
+    --background: transparent;
+    --border-color: #dfe6e9;
+    --border-radius: 8px;
+    --highlight-height: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .input {
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  /* Ligne de séparation */
+  .divider-line {
+    height: 1px;
+    background-color: #eee;
+    margin: 16px 0;
+  }
+  
+  /* Messages d'erreur */
+  .error-message {
+    font-size: 0.9rem;
+    margin: 0 0 16px 0;
+    text-align: center;
+  }
+  
+  /* Mot de passe oublié */
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .forgot-link {
+    color: #39C0C8;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  /* Boutons */
+  .login-button {
+    --background: #39C0C8;
+    --background-activated: #2da8b0;
+    --border-radius: 8px;
+    height: 50px;
+    font-weight: bold;
+  }
+  
+  .google-button {
+    --border-radius: 8px;
+    --background: white;
+    --color: #2c3e50;
+    --border-color: #dfe6e9;
+    --border-width: 1px;
+    height: 50px;
+  }
+  
+  /* Séparateur */
+  .divider {
+    position: relative;
+    height: 1px;
+    background-color: #dfe6e9;
+    margin: 24px 0;
+  }
+  
+  .divider-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 0 16px;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  /* Section inscription */
+  .signup-section {
+    margin-top: 24px;
+    text-align: center;
+  }
+  
+  .signup-text {
+    color: #7f8c8d;
+    margin: 0;
+  }
+  
+  .signup-link {
+    color: #39C0C8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 576px) {
+    .login-container {
+      padding: 16px;
+    }
+    
+    .form-card {
+      padding: 20px;
+      box-shadow: none;
+    }
+    
+    .title {
+      font-size: 1.5rem;
+    }
+  }

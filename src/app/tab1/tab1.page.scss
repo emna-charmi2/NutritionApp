@@ -1,0 +1,287 @@
+/* ============ GENERAL STYLES ============ */
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
+}
+
+/* ============ MENU STYLES ============ */
+.menu-button-list {
+  padding: 8px;
+  
+  .menu-button-item {
+    --border-radius: 12px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    margin-bottom: 12px;
+    border: 1px solid var(--ion-color-light-shade);
+    transition: all 0.3s ease;
+    
+    ion-icon {
+      color: var(--ion-color-primary);
+      font-size: 1.2rem;
+      margin-right: 12px;
+    }
+    
+    ion-label {
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--ion-color-dark);
+    }
+    
+    &:hover {
+      background: rgba(var(--ion-color-primary-rgb), 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+/* ============ TOOLBAR STYLES ============ */
+.custom-toolbar {
+  --background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  ion-buttons[slot="end"] {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+
+    ion-button {
+      --background: transparent;
+      --ripple-color: rgba(0,0,0,0.1);
+      width: 44px;
+      height: 44px;
+      min-width: auto;
+      min-height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.2s ease;
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .user-btn {
+      .user-icon {
+        font-size: 32px;
+        color: var(--ion-color-primary);
+        filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+        transition: all 0.3s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+          opacity: 0.95;
+        }
+      }
+
+      .user-avatar {
+        width: 44px;
+        height: 44px;
+        border: 3px solid var(--ion-color-primary);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+      }
+    }
+  }
+}
+
+/* ============ STATISTICS CARDS ============ */
+.stat-card {
+  height: 100%;
+  margin: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  ion-card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px !important;
+  }
+
+  .stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .title {
+    font-size: 0.9rem;
+    color: var(--ion-color-medium);
+    margin-bottom: 8px;
+  }
+
+  .value-row {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--ion-color-dark);
+    line-height: 1;
+  }
+
+  .unit {
+    font-size: 1rem;
+    color: var(--ion-color-medium);
+    margin-left: 4px;
+    padding-bottom: 4px;
+  }
+
+  .trend {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 8px;
+
+    .trend-value {
+      margin-right: 4px;
+      font-weight: 500;
+
+      &.success {
+        color: var(--ion-color-success);
+      }
+      
+      &.danger {
+        color: var(--ion-color-danger);
+      }
+    }
+
+    .trend-text {
+      color: var(--ion-color-medium);
+    }
+  }
+
+  .icon-wrapper {
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(var(--ion-color-primary-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-img.iicon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+/* ============ GRID LAYOUT ============ */
+ion-grid {
+  padding: 0;
+  margin-bottom: 16px;
+
+  ion-row {
+    margin: 0 -8px;
+
+    ion-col {
+      padding: 8px;
+    }
+  }
+}
+
+/* ============ BUTTON STYLES ============ */
+.logout-btn {
+  .logout-icon {
+    font-size: 28px;
+    color: var(--ion-color-danger);
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+    padding: 3px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.15);
+      color: var(--ion-color-danger-shade);
+    }
+  }
+}
+
+/* ============ RESPONSIVE ADJUSTMENTS ============ */
+@media (max-width: 576px) {
+  .custom-toolbar {
+    ion-buttons[slot="end"] {
+      gap: 8px;
+      
+      ion-button {
+        width: 40px;
+        height: 40px;
+      }
+
+      .user-btn {
+        .user-icon {
+          font-size: 28px;
+        }
+        .user-avatar {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .logout-btn .logout-icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .stat-card {
+    .value {
+      font-size: 1.5rem;
+    }
+    .icon-wrapper {
+      padding: 8px;
+      ion-img.iicon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.user-btn:active .user-icon,
+.logout-btn:active .logout-icon {
+  animation: pulse 0.3s ease;
+}
+
+/* ============ COMPACT HEADER ============ */
+.compact-header {
+  ion-toolbar {
+    --min-height: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+/* ============ SEGMENT STYLES ============ */
+ion-segment {
+  background-color: #ffffff;
+}
+
+.responsive-toolbar {
+  flex-wrap: wrap;
+  
+  ion-segment {
+    flex: 1;
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,265 @@
+/* Structure de base */
+ion-content.recipes-container {
+    --background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  
+  /* Titre centré */
+  .section-title {
+    text-align: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 600px;
+    color: var(--ion-color-primary);
+    padding: 0 16px;
+  }
+  
+  /* Conteneur de carte */
+  .scrolling-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Carte de recette */
+  .recipe-card {
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 20px;
+    width: 100%;
+    background: white;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+  
+  /* Image et overlay nutrition */
+  .image-container {
+    position: relative;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+  
+    .recipe-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  
+    &:hover .recipe-image {
+      transform: scale(1.03);
+    }
+  }
+  
+  .nutrition-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+    backdrop-filter: blur(4px);
+  
+    .nutrition-item {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+  
+      ion-icon {
+        font-size: 14px;
+      }
+    }
+  }
+  
+  /* En-tête de carte */
+  ion-card-header {
+    padding: 16px;
+  
+    ion-card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  }
+  
+  .card-subtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .time-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ion-color-medium);
+  
+      ion-icon {
+        font-size: 1rem;
+      }
+    }
+  
+    .add-button {
+      --padding-start: 0;
+      --padding-end: 0;
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
+  /* Boutons onglets */
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    padding: 0 16px 16px;
+  
+    ion-button {
+      flex: 1;
+      --border-radius: 8px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+  
+  /* Contenu des sections */
+  .content-section {
+    padding: 0 16px 16px;
+  
+  
+  }
+  
+  /* Style pour les titres */
+  h3 {
+    color: var(--ion-color-primary); /* Bleu Ionic */
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  /* Listes non-ordonnées (ingrédients) - puces grises */
+  .ingredients-list {
+    padding-left: 20px;
+    margin: 0;
+  
+    li {
+      margin-bottom: 8px;
+      position: relative;
+      list-style-type: none;
+      color: #333;
+  
+      &::before {
+        content: "•";
+        color: #999; /* Gris */
+        font-weight: bold;
+        position: absolute;
+        left: -15px;
+      }
+    }
+  }
+  
+  /* Listes ordonnées (préparation) - numéros bleus */
+  .preparation-steps {
+    padding-left: 20px;
+    margin: 0;
+    counter-reset: step-counter;
+  
+    li {
+      margin-bottom: 8px;
+      position: relative;
+      list-style-type: none;
+      counter-increment: step-counter;
+      color: #333;
+  
+      &::before {
+        content: counter(step-counter) ".";
+        color: var(--ion-color-primary); /* Bleu Ionic */
+        font-weight: bold;
+        position: absolute;
+        left: -20px;
+      }
+    }
+  }
+  
+  /* Bouton Ajouter */
+  .btn-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 16px;
+  
+    .add-recipe-btn {
+      --border-radius: 12px;
+      --padding-top: 16px;
+      --padding-bottom: 16px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .recipe-card,
+    .btn-container {
+      max-width: 95%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.3rem;
+    }
+  
+    .image-container {
+      height: 180px;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .add-recipe-btn {
+      font-size: 0.9rem;
+    }
+    .recipe-card,
+    .btn-container {
+      max-width: 95%;
+    }
+  }

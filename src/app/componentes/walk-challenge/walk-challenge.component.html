@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Challenge de Marche</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/challenges"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [fullscreen]="true">
+  <div class="loading-spinner" *ngIf="loading">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <ion-card class="challenge-card" *ngIf="!loading">
+    <ion-card-header>
+      <ion-card-title>Marchez 30 min pendant 30 jours</ion-card-title>
+      <ion-card-subtitle>Progression: {{walkDaysCount}}/30 jours</ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <div class="progress-container">
+        <ion-progress-bar 
+          [value]="walkDaysCount / 30" 
+          color="success"
+          class="main-progress">
+        </ion-progress-bar>
+        <span class="progress-text">{{ (walkDaysCount / 30 * 100).toFixed(0) }}%</span>
+      </div>
+      
+      <div class="streak-container ion-margin-vertical">
+        <ion-chip color="danger" *ngIf="currentStreak > 0">
+          <ion-icon name="flame" color="light"></ion-icon>
+          <ion-label>Série actuelle: {{currentStreak}} jours</ion-label>
+        </ion-chip>
+      </div>
+      
+      <div *ngIf="currentMessage">
+        <ion-item color="light" lines="none">
+          <ion-icon slot="start" name="sparkles" color="warning"></ion-icon>
+          <ion-text color="dark">
+            <h3>{{currentMessage}}</h3>
+            <p *ngIf="walkDaysCount > 0">Vous avez marché {{walkDaysCount}} jour(s) !</p>
+          </ion-text>
+        </ion-item>
+      </div>
+      
+      <ion-button 
+        expand="block" 
+        color="success" 
+        (click)="markAsDone()"
+        [disabled]="isTodayWalked() || loading"
+        class="action-button">
+        <ion-icon slot="start" name="walk"></ion-icon>
+        J'ai marché aujourd'hui!
+      </ion-button>
+      
+      <ion-note *ngIf="isTodayWalked()" class="already-walked">
+        Vous avez déjà marqué votre marche aujourd'hui. Revenez demain!
+      </ion-note>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-toast
+    [isOpen]="showNotification"
+    [message]="notificationMessage"
+    [duration]="3000"
+    (didDismiss)="showNotification = false">
+  </ion-toast>
+</ion-content>
