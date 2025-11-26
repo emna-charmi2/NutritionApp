@@ -1,1 +1,8 @@
-<h1>TAB2</h1>
+
+    <!-- Graphique calories personnalisé -->
+    <app-calories-chart
+    [consumed]="dailyStats.consumed"
+    [target]="dailyStats.target"
+    [userId]="currentUserId"
+    [date]="selectedDate">
+  </app-calories-chart>

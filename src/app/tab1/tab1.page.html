@@ -12,10 +12,7 @@
           <ion-icon name="barbell" slot="start"></ion-icon>
           <ion-label>Activité</ion-label>
         </ion-item>
-        <ion-item button detail="false" class="menu-button-item">
-          <ion-icon name="medkit" slot="start"></ion-icon>
-          <ion-label>Santé</ion-label>
-        </ion-item>
+
         <ion-item button routerLink="/challenges" detail="false" class="menu-button-item">
           <ion-icon name="trophy" slot="start"></ion-icon>
           <ion-label>Défis</ion-label>
@@ -56,13 +53,7 @@
     </ion-header>
 
     <ion-content class="ion-padding">
-      <!-- Graphique calories personnalisé -->
-      <app-calories-chart
-      [consumed]="dailyStats.consumed"
-      [target]="dailyStats.target"
-      [userId]="currentUserId" 
-      [date]="selectedDate">   
-    </app-calories-chart>
+
 
       <!-- Statistiques rapides (Poids / Pas) -->
       <ion-grid>
