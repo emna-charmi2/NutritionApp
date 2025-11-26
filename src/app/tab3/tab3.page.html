@@ -3,28 +3,28 @@
     <div class="profile-image-container">
       <img [src]="nuser.profileImage" [alt]="nuser.name">
     </div>
-    
+
     <div class="card-content">
       <ion-card-header>
         <ion-card-title>{{ nuser.name }}</ion-card-title>
         <ion-card-subtitle>{{ nuser.role }}</ion-card-subtitle>
       </ion-card-header>
-    
+
       <ion-card-content>
         <div class="action-container">
           <!-- Bouton Suivre -->
           <button class="action-button" (click)="toggleFollow(nuser)">
-            <img 
-              [src]="getFollowImage(nuser)" 
+            <img
+              [src]="getFollowImage(nuser)"
               [alt]="nuser.isFollowing ? 'Arrêter de suivre' : 'Suivre'"
               class="action-icon"
             >
           </button>
-          
+
           <!-- Bouton Like -->
           <button class="action-button" (click)="toggleLike(nuser)">
-            <img 
-              [src]="getLikeImage(nuser)" 
+            <img
+              [src]="getLikeImage(nuser)"
               [alt]="nuser.isLiked ? 'Unlike' : 'Like'"
               class="action-icon"
             >
@@ -34,9 +34,6 @@
     </div>
   </ion-card>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="chevron-forward"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
+
 </ion-content>
